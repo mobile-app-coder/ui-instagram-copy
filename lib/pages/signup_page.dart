@@ -26,77 +26,92 @@ class _SignUpPageState extends State<SignUpPage> {
     return Scaffold(
       body: Center(
         child: Container(
-          width: MediaQuery
-              .of(context)
-              .size
-              .width,
+          width: MediaQuery.of(context).size.width,
           padding: EdgeInsets.all(20),
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    Color.fromRGBO(193, 53, 132, 1),
+                    Color.fromRGBO(131, 58, 180, 1),
+                  ])),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
                 "Instagram",
                 style: TextStyle(
-                    fontSize: 45, color: Colors.black, fontFamily: "Billabong"),
+                    fontSize: 45, color: Colors.white, fontFamily: "Billabong"),
               ),
               Container(
-                height: 48,
+                height: 50,
                 decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    borderRadius: BorderRadius.circular(5)),
+                    color: Colors.white.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(7)),
                 child: TextField(
+                  style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
-                      contentPadding: EdgeInsets.all(10),
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.teal)),
                       hintText: "Name",
-                      hintStyle: TextStyle(color: Colors.grey)),
+                      contentPadding: EdgeInsets.all(10),
+                      border: InputBorder.none,
+                      hintStyle:
+                      TextStyle(color: Colors.white54, fontSize: 17)),
                 ),
               ),
               SizedBox(height: 10),
               Container(
-                height: 48,
+                height: 50,
                 decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    borderRadius: BorderRadius.circular(5)),
+                    color: Colors.white.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(7)),
                 child: TextField(
+                  style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
-                      contentPadding: EdgeInsets.all(10),
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.teal)),
                       hintText: "Email",
-                      hintStyle: TextStyle(color: Colors.grey)),
+                      contentPadding: EdgeInsets.all(10),
+                      border: InputBorder.none,
+                      hintStyle:
+                      TextStyle(color: Colors.white54, fontSize: 17)),
                 ),
               ),
               SizedBox(height: 10),
               Container(
-                height: 48,
+                height: 50,
                 decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    borderRadius: BorderRadius.circular(5)),
+                    color: Colors.white.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(7)),
                 child: TextField(
+                  style: TextStyle(color: Colors.white),
                   decoration: InputDecoration(
-                      contentPadding: EdgeInsets.all(10),
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.teal)),
-                      hintText: "Password",
-                      hintStyle: TextStyle(color: Colors.grey)),
+                    hintText: "Password",
+                    contentPadding: EdgeInsets.all(10),
+                    border: InputBorder.none,
+                    hintStyle: TextStyle(color: Colors.white54, fontSize: 17),
+                  ),
+                  obscureText: true,
                 ),
               ),
               SizedBox(
                 height: 10,
               ),
-              Container(
-                width: double.infinity,
-                height: 48,
-                child: MaterialButton(
-                  color: Colors.blue,
-                  onPressed: () {
-                    signUp();
-                  },
-                  textColor: Colors.white,
-                  child: Text("Sign up"),
+              GestureDetector(
+                child: Container(
+                    width: double.infinity,
+                    height: 50,
+                    decoration: BoxDecoration(
+                        color: Colors.white.withOpacity(0.2),
+                        borderRadius: BorderRadius.circular(7)),
+                    child: Center(
+                      child: Text(
+                        "Sign up",
+                        style: TextStyle(color: Colors.white, fontSize: 17),
+                      ),
+                    ),
                 ),
+                onTap: (){
+                  signUp();
+                },
               ),
               SizedBox(
                 height: 10,
@@ -104,14 +119,18 @@ class _SignUpPageState extends State<SignUpPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text("Already have an account"),
+                  Text(
+                    "Already have an account",
+                    style: TextStyle(color: Colors.white),
+                  ),
                   SizedBox(
                     width: 10,
                   ),
                   GestureDetector(
                     child: Text(
                       "Sign in",
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.white),
                     ),
                     onTap: () {
                       openSignInPage();
@@ -125,4 +144,5 @@ class _SignUpPageState extends State<SignUpPage> {
       ),
     );
   }
+
 }
