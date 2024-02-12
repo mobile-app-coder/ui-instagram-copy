@@ -26,26 +26,26 @@ class _FeedPageState extends State<FeedPage> {
         "Sylvester",
         "assets/images/user_2.jpeg",
         [
-          "assets/images/user_1.jpeg",
+          "assets/images/feed_1.jpg",
           "assets/images/user_2.jpeg",
-          "assets/images/user_3.jpeg"
+          "assets/images/feed_3.jpg"
         ],
         ""),
     Post(
         "Sylvester",
-        "assets/images/user_2.jpeg",
+        "assets/images/feed_1.jpg",
         [
           "assets/images/user_2.jpeg",
           "assets/images/user_1.jpeg",
-          "assets/images/user_3.jpeg"
+          "assets/images/feed_3.jpg"
         ],
         ""),
     Post(
         "Lavina",
-        "assets/images/user_3.jpeg",
+        "assets/images/feed_1.jpg",
         [
           "assets/images/user_1.jpeg",
-          "assets/images/user_2.jpeg",
+          "assets/images/feed_3.jpg",
           "assets/images/user_3.jpeg"
         ],
         ""),
@@ -163,7 +163,6 @@ class _FeedPageState extends State<FeedPage> {
             child: PageView(
               scrollDirection: Axis.horizontal,
               controller: _pageController,
-
               onPageChanged: (index) {
                 setState(
                   () {
@@ -179,7 +178,6 @@ class _FeedPageState extends State<FeedPage> {
               }).toList(),
             ),
           ),
-
 
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
